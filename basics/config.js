@@ -1,4 +1,4 @@
-function getConfig(args) {
+ function getConfig(args) {
     if (args.length === 4) {
         return {hostname: args[2], port: args[3]}
     }
