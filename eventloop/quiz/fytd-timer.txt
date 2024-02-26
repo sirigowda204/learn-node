@@ -1,1 +1,14 @@
 - In eventloop/timer.js, what will be the order of execution? Briefly explain the order of execution w.r.t the event loop phases.
+
+
+First, foo(2) is called, which logs 'foo', schedules bar(2) to be executed, and logs 'baz'. 
+Then, foo(1) is called, repeating the same steps for bar(1). 
+Finally, the callback queue triggers, executing bar(2) followed by bar(1). 
+
+The output is:
+foo
+baz
+foo
+baz
+2 : bar
+1 : bar
